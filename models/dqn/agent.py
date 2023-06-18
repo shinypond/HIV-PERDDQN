@@ -14,7 +14,7 @@ import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 from .memory import ReplayBuffer, PrioritizedReplayBuffer
 from .network import Network 
-from envs.hiv_v1 import make_HIV_env
+from envs.hiv import make_HIV_env
 from configs import treatment_days
 
 

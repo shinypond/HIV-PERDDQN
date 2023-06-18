@@ -5,16 +5,16 @@ from scipy.integrate import solve_ivp
 import gym
 from gym import spaces
 from gym.envs.registration import register
-from .constants_v1 import *
+from .constants import *
 
 
 def make_HIV_env(**kwargs) -> gym.Env:
     register(
-        id='hiv-v1',
-        entry_point='envs.hiv_v1:HIV_Dynamics',
+        id='hiv',
+        entry_point='envs.hiv:HIV_Dynamics',
         kwargs=kwargs,
     )
-    hiv_env = gym.make('hiv-v1')
+    hiv_env = gym.make('hiv')
     hiv_env.reset()
     return hiv_env
 
