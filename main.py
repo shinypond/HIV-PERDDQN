@@ -19,7 +19,7 @@ def main(args):
         ckpt_dir=args.ckpt_dir,
         load_ckpt=(args.resume) or (args.mode == 'test'),
         writer=writer,
-        **cfg[f'{args.model}_agent'],
+        **cfg[f'dqn_agent'],
     )
 
     # Training Configuraiton

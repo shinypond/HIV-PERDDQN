@@ -644,10 +644,13 @@ def get_last_treatment_day(action: np.ndarray) -> int:
 
 
 @njit(cache=True)
-def discounted_sum(rewards: np.ndarray, discount_factor: float = 0.99) -> float:
+def discounted_sum(rewards: np.ndarray, discount_factor: float = 0.99, n: int = 5) -> float:
     _sum = 0.
     _factor = 1.
+    _cnt = 0
     for r in rewards[:, 0]:
         _sum += r * _factor
-        _factor *= discount_factor 
+        _cnt += 1
+        if _cnt % n == 0:
+            _factor *= discount_factor 
     return _sum

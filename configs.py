@@ -2,7 +2,7 @@ cfg = {}
 
 
 # Environment Configuration
-max_days = 600
+max_days = 1000
 treatment_days = 1
 reward_scaler = 1e+8 # IMPORTANT
 MAX_EPISODE_STEPS = max_days // treatment_days 
